@@ -1,10 +1,7 @@
 'use strict'
 const timer = (deadline) => {
     // html элементы для вставки таймера
-    const timerDays = document.querySelector('div.count_1 span');
-    const timerHours = document.querySelector('div.count_2 span');
-    const timerMinutes = document.querySelector('div.count_3 span');
-    const timerSeconds = document.querySelector('div.count_4 span');
+    const timers = document.querySelectorAll('.order')
 
     // функция форматирования в 00:00:00:00
     const getNullAdd = function (param) {
@@ -27,28 +24,33 @@ const timer = (deadline) => {
         
     }
     // обновление данных в элементах html
-    const updateClock = () => {
+    const getTimer = () => {
         let getTime = getTimeRemaining();
-        if (getTime.timeRemaining < 0) {
-            timerDays.textContent = getNullAdd(0);
-            timerHours.textContent = getNullAdd(0);
-            timerMinutes.textContent = getNullAdd(0);
-            timerSeconds.textContent = getNullAdd(0);
-        } else {
-            timerDays.textContent = getTime.days;
-            timerHours.textContent = getTime.hours;
-            timerMinutes.textContent = getTime.minutes;
-            timerSeconds.textContent = getTime.seconds;
-        }
+        timers.forEach(timer => {
+            const timerDays = timer.querySelector('div.count_1 span');
+            const timerHours = timer.querySelector('div.count_2 span');
+            const timerMinutes = timer.querySelector('div.count_3 span');
+            const timerSeconds = timer.querySelector('div.count_4 span');
+    
+            if (getTime.timeRemaining < 0) {
+                timerDays.textContent = getNullAdd(0);
+                timerHours.textContent = getNullAdd(0);
+                timerMinutes.textContent = getNullAdd(0);
+                timerSeconds.textContent = getNullAdd(0);
+            } else {
+                timerDays.textContent = getTime.days;
+                timerHours.textContent = getTime.hours;
+                timerMinutes.textContent = getTime.minutes;
+                timerSeconds.textContent = getTime.seconds;
+            }
+        })
     }
 
-    // расчёт и повторение функции
     let getTime = getTimeRemaining()
-    if (getTime.timeRemaining > 0) {
-        setInterval(updateClock, 1000)
-    }
-    updateClock()
-    
+        if (getTime.timeRemaining > 0) {
+            setInterval(getTimer, 1000)
+        }
+        getTimer() 
 }
 
 export default timer
