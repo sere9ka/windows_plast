@@ -1,5 +1,5 @@
 const modalTel = () => {
-    console.log('modalTel');
+    console.log('ветка разработки');
 }
 
 export default modalTel
