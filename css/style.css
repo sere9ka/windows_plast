@@ -1589,6 +1589,9 @@ input.error {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.45);
 }
+.overlay-open {
+  display: block;
+}
 
 .benefits-wrap {
   display: flex;
