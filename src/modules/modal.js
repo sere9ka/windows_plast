@@ -1,3 +1,5 @@
+import { animate } from "./helpers";
+
 const modal = () => {
     // отслеживаем события
     const body = document.querySelector('body')
