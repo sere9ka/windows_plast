@@ -1,11 +1,12 @@
 'use strict'
 const timer = (deadline) => {
-    // const timerBlock = document.getElementById('.count-wrap');
+    // html элементы для вставки таймера
     const timerDays = document.querySelector('div.count_1 span');
     const timerHours = document.querySelector('div.count_2 span');
     const timerMinutes = document.querySelector('div.count_3 span');
     const timerSeconds = document.querySelector('div.count_4 span');
 
+    // функция форматирования в 00:00:00:00
     const getNullAdd = function (param) {
         if (param < 10) {
             return '0' + param;
@@ -13,6 +14,7 @@ const timer = (deadline) => {
             return param
         }
     }
+    // расчёт времени до deadline
     const getTimeRemaining = () => {
         let dateStop = new Date(deadline).getTime()
         let dateNow = new Date().getTime();
@@ -24,6 +26,7 @@ const timer = (deadline) => {
         return {timeRemaining, days, hours, minutes, seconds}
         
     }
+    // обновление данных в элементах html
     const updateClock = () => {
         let getTime = getTimeRemaining();
         if (getTime.timeRemaining < 0) {
@@ -38,6 +41,8 @@ const timer = (deadline) => {
             timerSeconds.textContent = getTime.seconds;
         }
     }
+
+    // расчёт и повторение функции
     let getTime = getTimeRemaining()
     if (getTime.timeRemaining > 0) {
         setInterval(updateClock, 1000)
