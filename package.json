@@ -1,0 +1,16 @@
+{
+  "name": "windows_plast",
+  "version": "1.0.0",
+  "description": "учебный проект",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "author": "Kovylov Sergey",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.64.1",
+    "webpack-cli": "^4.9.1"
+  }
+}
