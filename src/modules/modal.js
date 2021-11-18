@@ -8,18 +8,35 @@ const modal = () => {
     const overlay = document.querySelector('.overlay')
 
     // функция - переключатель
-    const toggleModalTel = (toggleClass, targetElem) => {
+    const animModal = (toggleClass, targetElem) => {
         overlay.classList.toggle('overlay-open')
         targetElem.classList.toggle(toggleClass)
+
+        overlay.style.transform = 'translateX(-100%)';
+        targetElem.style.transform = 'translate(-100%)';
+
+        let count = -100
+
+        animate({
+            duration: 500,
+            timing(timeFraction) {
+              return timeFraction;
+            },
+            draw(progress) {
+                targetElem.style.transform = `translate(${(count*10 + progress*1000)/2 - 50}%, ${(count*10 + progress*1000)/2 - 50}%)`;
+                overlay.style.transform = `translateX(${count + progress*100}%)`;
+                
+            }
+          });
     }    
 
     // отслеживаем клики по кнопке + запуск переключателя
     body.addEventListener('click', (e) => {
         e.preventDefault()
         if (e.target.matches('.callTel') || e.target.matches('.header-modal__close')) {
-            toggleModalTel('header-modal', modalForTel)
+            animModal('header-modal', modalForTel)
         } else if (e.target.matches('.modalCall') || e.target.matches('.services-modal__close')) {
-            toggleModalTel('services-modal', modalForMan)
+            animModal('services-modal', modalForMan)
         }
     })
     
