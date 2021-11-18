@@ -1,1 +1,1 @@
-(()=>{"use strict";console.log("modalTel")})();
+(()=>{"use strict";(()=>{const e=document.querySelector("body"),t=document.querySelector(".header-modal--opened"),o=document.querySelector(".overlay");e.addEventListener("click",(e=>{(e.target.matches(".fancyboxModal")||e.target.matches(".header-modal__close"))&&(t.classList.toggle("header-modal"),o.classList.toggle("overlay-open"))}))})()})();
