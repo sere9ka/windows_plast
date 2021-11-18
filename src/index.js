@@ -1,3 +1,3 @@
-import modalTel from './modules/modalTel'
+import modal from './modules/modalTel'
 
-modalTel()
+modal()
