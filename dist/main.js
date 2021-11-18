@@ -1,1 +1,1 @@
-(()=>{"use strict";console.log("modalTel")})();
+(()=>{"use strict";console.log("ветка разработки")})();
