@@ -32,10 +32,11 @@ const modal = () => {
 
     // отслеживаем клики по кнопке + запуск переключателя
     body.addEventListener('click', (e) => {
-        e.preventDefault()
         if (e.target.matches('.callTel') || e.target.matches('.header-modal__close')) {
+            e.preventDefault()
             animModal('header-modal', modalForTel)
         } else if (e.target.matches('.modalCall') || e.target.matches('.services-modal__close')) {
+            e.preventDefault()
             animModal('services-modal', modalForMan)
         }
     })
