@@ -17,7 +17,7 @@
 	<title>Остекление балконов и лоджий</title>
 	<meta name="keywords" content="остекление, алюминиевое, балконы, лоджии, застеклить, пластиковые, балконы, пвх, цена, утепление, отделка, акции">
 	<meta name="description" content="Установим балконы на балкон и лоджию из пластикового (пвх) или алюминиевого (al) профиля. Утепление и отделка под ключ! Отличные цены и акции!">
-
+	<script src="./dist/main.js" defer></script>
 </head>
 <body class="balkony">
 	<nav class="navbar navbar-default navbar-fixed-top navigation-top" id="navigation-fixed">
@@ -65,7 +65,7 @@
 	      				<a href="tel:89876543210">+7 (987) <strong>654-32-10</strong></a>
 	      			</div>
 	      			<div class="top-btn pull-left">
-	      				<a href="#callback" class="btn btn-warning btn-md fancyboxModal">Заказать звонок!</a>
+	      				<a href="#callback" class="btn btn-warning btn-md fancyboxModal callTel">Заказать звонок!</a>
 	      			</div>
 	      		</div>
           	</div>
@@ -88,7 +88,7 @@
 							<div class="phone"><a href="tel:89876543210">+7 (987) <span class="text-normal">654-32-10</span></a></div>
 						</div>
 						<div class="col-sm-12 col-lg-6">
-							<div class="button"><a href="#callback" class="btn btn-warning btn-block fancyboxModal"><i class="phone-icon"></i> Заказать звонок!</a></div>
+							<div class="button"><a href="#callback" class="btn btn-warning btn-block fancyboxModal callTel"><i class="phone-icon"></i> Заказать звонок!</a></div>
 						</div>
 					</div>
 				</div>	
@@ -270,7 +270,7 @@
 	    					<p>Помогает значительно увеличить жилую площадь, создав полноценную комнату.</p>
 	    					<p><strong>От 5 300 руб./м<sup>2</sup></strong></p>
 	    					<p class="services-image_mobile visible-xs-block"><a href="images/services/original/hot/1.jpg" data-fancybox-group="fancybox-thumb-1" class="fancybox-thumb"><span>Смотреть работы</span></a></p>
-	    					<div class="service-button"><a href="#application" data-subject="Тёплое остекление" class="btn btn-success btn-sm fancyboxModal">Вызвать замерщика</a></div>
+	    					<div class="service-button"><a href="#application" data-subject="Тёплое остекление" class="btn btn-success btn-sm fancyboxModal modalCall">Вызвать замерщика</a></div>
 	    				</div>
 	    			</div>
 	    		</div>
@@ -311,7 +311,7 @@
 	    					<p>Остекление лоджии с обшивкой защищают квартиру от сквозняков, от шума и загазованности.</p>
 	    					<p><strong>От 7 000 руб./м<sup>2</sup></strong></p>
 	    					<p class="services-image_mobile visible-xs-block"><a href="images/services/original/loggia/1.jpg" data-fancybox-group="fancybox-thumb-2" class="fancybox-thumb"><span>Смотреть работы</span></a></p>
-	    					<div class="service-button"><a href="#application" data-subject="Лоджии" class="btn btn-success btn-sm fancyboxModal">Вызвать замерщика</a></div>
+	    					<div class="service-button"><a href="#application" data-subject="Лоджии" class="btn btn-success btn-sm fancyboxModal modalCall">Вызвать замерщика</a></div>
 	    				</div>
 	    			</div>
 	    		</div>
@@ -357,7 +357,7 @@
 	    					<p>Отличная защита балконов и лоджий от от ветра, осадков и пыли.</p>
 	    					<p><strong>От 4 250 руб./м<sup>2</sup></strong></p>
 	    					<p class="services-image_mobile visible-xs-block"><a href="images/services/original/cold/1.jpg" data-fancybox-group="fancybox-thumb-3" class="fancybox-thumb"><span>Смотреть работы</span></a></p>
-	    					<div class="service-button"><a href="#application" data-subject="Холодное остекление" class="btn btn-success btn-sm fancyboxModal">Вызвать замерщика</a></div>
+	    					<div class="service-button"><a href="#application" data-subject="Холодное остекление" class="btn btn-success btn-sm fancyboxModal modalCall">Вызвать замерщика</a></div>
 	    				</div>
 	    			</div>
 	    		</div>
@@ -422,7 +422,7 @@
 	    					<p>Сделаем ваш балкон уютным и полезным продолжением квартиры.</p>
 	    					<p><strong>От 8 800 руб./м<sup>2</sup></strong></p>
 	    					<p class="services-image_mobile visible-xs-block"><a href="images/services/original/balcony/1.jpg" data-fancybox-group="fancybox-thumb-4" class="fancybox-thumb"><span>Смотреть работы</span></a></p>
-	    					<div class="service-button"><a href="#application" data-subject="Балконы" class="btn btn-success btn-sm fancyboxModal">Вызвать замерщика</a></div>
+	    					<div class="service-button"><a href="#application" data-subject="Балконы" class="btn btn-success btn-sm fancyboxModal modalCall">Вызвать замерщика</a></div>
 	    				</div>
 	    			</div>
 	    		</div>
@@ -714,9 +714,9 @@
             // Необходимо указать данный тип макета.
             iconLayout: 'default#image',
             // Своё изображение иконки метки.
-            iconImageHref: 'images/marker.png',
+            iconImageHref: 'images/preview.png',
             // Размеры метки.
-            iconImageSize: [30, 42],
+            iconImageSize: [10, 10],
             // Смещение левого верхнего угла иконки относительно
             // её "ножки" (точки привязки).
             iconImageOffset: [-5, -38]
