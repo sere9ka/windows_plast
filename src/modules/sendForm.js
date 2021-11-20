@@ -1,8 +1,8 @@
-const sendForm = ({formId, someElem = []}) => {
+const sendForm = ({ formId, someElem = [] }) => {
     const form = document.getElementById(formId)
     const statusBlock = form.querySelector('.status');
     const textLoad = 'Загрузка...'
-    const successText = 'Спасибо! Наш менеджер свяжется с Вами!'    
+    const successText = 'Спасибо! Наш менеджер свяжется с Вами!'
 
     const validate = () => {
         let success;
@@ -32,7 +32,7 @@ const sendForm = ({formId, someElem = []}) => {
                 "Content-Type": "application/json"
             }
         })
-        .then(res => res.json())
+            .then(res => res.json())
     }
 
     const submitForm = (form) => {
@@ -45,14 +45,13 @@ const sendForm = ({formId, someElem = []}) => {
         }
         statusBlock.style.display = 'block'
         statusBlock.textContent = textLoad
-        
+
         formData.forEach((value, key) => {
             formBody[key] = value
         })
-        
+
         if (someElem.length != 0) {
             someElem.forEach(elem => {
-                console.log(elem);
                 const element = document.getElementById(elem.id)
                 if (elem.type === 'block') {
                     formBody[elem.id] = element.textContent
@@ -61,12 +60,12 @@ const sendForm = ({formId, someElem = []}) => {
                 }
             })
         }
-        
+
 
         if (validate(formElements)) {
             sendData(formBody)
                 .then(data => {
-                    
+
                     removeStatus()
                     statusBlock.style.display = 'block'
                     statusBlock.style.width = ''
@@ -90,10 +89,10 @@ const sendForm = ({formId, someElem = []}) => {
         if (!form) {
             throw new Error('Верните форму на место! =)')
         }
-        submitForm(form)   
-        setTimeout(removeStatus, 5000) 
-    } catch(error) {
-        
+        submitForm(form)
+        setTimeout(removeStatus, 5000)
+    } catch (error) {
+
     }
 }
 
