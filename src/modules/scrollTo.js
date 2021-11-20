@@ -1,17 +1,18 @@
 const scrollTo = () => {
     const btnToTop = document.querySelector('.smooth-scroll__img')
+    const firstSection = document.getElementById('offer')
+
 
     btnToTop.style.cursor = 'pointer'
     btnToTop.style.display = 'none'
 
     const trackScroll = () => {
         let scrolled = window.pageYOffset;
-        let coords = document.documentElement.clientHeight;
-    
-        if (scrolled > coords) {
+        
+        if (scrolled > 2) {
             btnToTop.style.display = 'block'
         }
-        if (scrolled < coords) {
+        if (!scrolled) {
             btnToTop.style.display = 'none'
         }
     }
@@ -23,7 +24,12 @@ const scrollTo = () => {
           }
     }
 
-    window.addEventListener('scroll', trackScroll);
+    document.addEventListener('DOMContentLoaded', () => {
+        if (window.pageYOffset < 300) {
+            window.addEventListener('scroll', trackScroll);
+        }
+    })
+    
     btnToTop.addEventListener('click', backToTop);
 
     
