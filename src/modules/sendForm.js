@@ -48,10 +48,12 @@ const sendForm = ({ formId, someElem = [] }) => {
 
         formData.forEach((value, key) => {
             formBody[key] = value
+            
         })
 
         if (someElem.length != 0) {
             someElem.forEach(elem => {
+                
                 const element = document.getElementById(elem.id)
                 if (elem.type === 'block') {
                     formBody[elem.id] = element.textContent
@@ -65,7 +67,6 @@ const sendForm = ({ formId, someElem = [] }) => {
         if (validate(formElements)) {
             sendData(formBody)
                 .then(data => {
-
                     removeStatus()
                     statusBlock.style.display = 'block'
                     statusBlock.style.width = ''
