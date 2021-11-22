@@ -1667,6 +1667,9 @@ input.error {
   bottom: 25px;
   transform: rotate(90deg);
 }
+.not-active {
+  display: none;
+}
 
 @media (min-width: 576px) {
   .benefits-wrap {
