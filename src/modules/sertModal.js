@@ -1,14 +1,14 @@
 const sertModal = () => {
     const sectionDoc = document.getElementById('documents')
     const sertifikateBlocks = sectionDoc.querySelectorAll('.text-center > div')
-    const body = document.querySelector('body')
     const overlay = document.querySelector('.overlay')
 
+    // закрытие окна сертификата
     const getClose = (newModal) => {
         newModal.remove()
         overlay.classList.toggle('overlay-open')
     }
-
+    // создание окна сертификата + запуск оверлея
     const getNewModal = (linkDocument) => {
         const newModal = document.createElement('div')
         const newImg = document.createElement('img')
@@ -32,7 +32,7 @@ const sertModal = () => {
         })
     }
 
-
+    // клик по сертификату
     sertifikateBlocks.forEach((sertifikateBlock, id) => {
         let sertLink = sertifikateBlock.querySelector('a')
 
