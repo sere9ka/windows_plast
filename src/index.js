@@ -4,9 +4,8 @@ import scrollTo from './modules/scrollTo'
 import calc from './modules/calc'
 import validator from './modules/validator'
 import sendForm from './modules/sendForm'
-import slider from './modules/slider'
 import sertModal from './modules/sertModal'
-import sliderOld from './modules/sliderOld'
+import slider from './modules/slider'
 
 
 modal()
@@ -16,7 +15,6 @@ calc()
 validator()
 slider()
 sertModal()
-sliderOld()
 
 
 const forms = document.querySelectorAll('form')
