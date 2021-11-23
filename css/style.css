@@ -1670,6 +1670,28 @@ input.error {
 .not-active {
   display: none;
 }
+.modal-sert {
+  position: fixed;
+  height: 100vh;
+  background:rgba(0, 0, 0, 0.8);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+.sert-img__modal {
+  height: 100vh;
+}
+.sert-modal__close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 36px;
+  cursor: pointer;
+}
+.sert-modal__close:hover {
+  color: rgba(0, 0, 0, 0.35);
+}
 
 @media (min-width: 576px) {
   .benefits-wrap {
