@@ -6,6 +6,7 @@ import validator from './modules/validator'
 import sendForm from './modules/sendForm'
 import slider from './modules/slider'
 import sertModal from './modules/sertModal'
+import sliderOld from './modules/sliderOld'
 
 
 modal()
@@ -15,6 +16,7 @@ calc()
 validator()
 slider()
 sertModal()
+sliderOld()
 
 
 const forms = document.querySelectorAll('form')

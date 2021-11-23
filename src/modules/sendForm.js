@@ -3,7 +3,7 @@ const sendForm = ({ formId, someElem = [] }) => {
     const statusBlock = form.querySelector('.status');
     const textLoad = 'Загрузка...'
     const successText = 'Спасибо! Наш менеджер свяжется с Вами!'
-
+    // валидация форм
     const validate = () => {
         let success;
         const inputName = form.querySelector('[name="fio"]')
@@ -19,11 +19,12 @@ const sendForm = ({ formId, someElem = [] }) => {
 
         return success
     }
+    // убираем статус из формы
     const removeStatus = () => {
         statusBlock.textContent = ''
         statusBlock.style.display = 'none'
     }
-
+    // отправка данных
     const sendData = (data) => {
         return fetch('https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',
@@ -34,7 +35,7 @@ const sendForm = ({ formId, someElem = [] }) => {
         })
             .then(res => res.json())
     }
-
+    // получение и отправка формы в отправку данных
     const submitForm = (form) => {
         const formElements = form.querySelectorAll('input')
         const formData = new FormData(form)
@@ -85,7 +86,7 @@ const sendForm = ({ formId, someElem = [] }) => {
                 })
         }
     }
-
+    // проверка, есть ли форма вообще?
     try {
         if (!form) {
             throw new Error('Верните форму на место! =)')
