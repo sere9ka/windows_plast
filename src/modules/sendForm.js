@@ -9,7 +9,7 @@ const sendForm = ({ formId, someElem = [] }) => {
         const inputName = form.querySelector('[name="fio"]')
         const inputPhone = form.querySelector('[name="phone"]')
 
-        if (inputName.value === '' || inputName.value.length < 3) {
+        if (inputName.value === '' || inputName.value.length < 2) {
             statusBlock.textContent = 'Введите имя, не меньше 3 БУКВ!'
         } else if (inputPhone.value.length < 11 || inputPhone.value.length > 16) {
             statusBlock.textContent = 'Введите правильный номер из 11 цифр! Формат ввода: 8 000 000 00 00'
@@ -18,6 +18,7 @@ const sendForm = ({ formId, someElem = [] }) => {
         }
 
         return success
+        
     }
     // убираем статус из формы
     const removeStatus = () => {
@@ -52,9 +53,9 @@ const sendForm = ({ formId, someElem = [] }) => {
             
         })
 
-        if (someElem.length != 0) {
+        if (someElem.length !== 0) {
+            console.log(someElem);
             someElem.forEach(elem => {
-                
                 const element = document.getElementById(elem.id)
                 if (elem.type === 'block') {
                     formBody[elem.id] = element.textContent
@@ -63,7 +64,6 @@ const sendForm = ({ formId, someElem = [] }) => {
                 }
             })
         }
-
 
         if (validate(formElements)) {
             sendData(formBody)

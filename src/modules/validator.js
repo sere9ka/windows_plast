@@ -3,7 +3,7 @@ const validator = () => {
     const nameUsers = document.querySelectorAll('[name="fio"]')
     const numberRules = /(^0-9)/;
     const phoneRules = /([^0-9\+])/;
-    const nameRules = /[^А-Я-а-яё\s][^A-Z-a-z\s]+$/i;
+    const nameRules = /[^A-Z-a-z-А-Я-а-я\s]+$/i;
     
     if (document.body.className == 'balkony') {
         document.querySelector('#calc-input').addEventListener('input', (e=>{e.target.value=e.target.value.replace(numberRules, "")}))

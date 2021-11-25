@@ -7,12 +7,12 @@ const modal = () => {
     const modalForMan = document.querySelector('.services-modal--opened')
     const overlay = document.querySelector('.overlay')
 
+
     // функция - переключатель
     const animModal = (toggleClass, targetElem) => {
         overlay.classList.toggle('overlay-open')
         targetElem.classList.toggle(toggleClass)
 
-        overlay.style.transform = 'translateX(-100%)';
         targetElem.style.transform = 'translate(-100%)';
 
         let count = -100
@@ -24,7 +24,6 @@ const modal = () => {
             },
             draw(progress) {
                 targetElem.style.transform = `translate(${(count*10 + progress*1000)/2 - 50}%, ${(count*10 + progress*1000)/2 - 50}%)`;
-                overlay.style.transform = `translateX(${count + progress*100}%)`;
                 
             }
           });

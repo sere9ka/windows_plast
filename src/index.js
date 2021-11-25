@@ -7,17 +7,17 @@ import sendForm from './modules/sendForm'
 import sertModal from './modules/sertModal'
 import slider from './modules/slider'
 import reviews from './modules/reviews'
-
+import mobileMenu from './modules/mobileMenu'
 
 modal()
-timer('24 november 2021')
+timer('30 november 2021')
 scrollTo()
 calc()
 validator()
 slider()
 sertModal()
 reviews()
-
+mobileMenu()
 
 const forms = document.querySelectorAll('form')
 forms.forEach((form, id) => {
@@ -26,14 +26,23 @@ forms.forEach((form, id) => {
     form.append(statusBlock)
     form.addEventListener('submit', (e) => {
         e.preventDefault();
+        if (e.target.closest('.balkony')) {
+            sendForm({ 
+                formId: `form${id+1}`,
+                someElem: [
+                    {
+                        type: 'block',
+                        id: 'calc-total'
+                    }
+                ]
+             })
+        } else {
         sendForm({ 
             formId: `form${id+1}`,
             someElem: [
-                {
-                    type: 'block',
-                    id: 'calc-total'
-                }
+
             ]
          })
+        }
     })
 })

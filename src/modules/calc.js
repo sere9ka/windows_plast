@@ -35,7 +35,7 @@ const calc = () => {
 
         const calcValue = () => {
             let value = getCalc()
-            calcTotal.value = value.sum
+            calcTotal.value = Math.round(value.sum)
         }
 
         calculatorSection.addEventListener('input', (e) => {
